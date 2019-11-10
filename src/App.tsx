@@ -1,13 +1,15 @@
-import * as React from 'react';
+import React from "react";
+import ListOfCars from "./components/ListOfCars";
 
-const App = () => (
-  <div>
-  <h1>Hello!</h1>
-  <p>
-    Edit this file and linked JS/CSS, changes will appear directly in your
-    browser.
-  </p>
-</div>
-);
+const App = () => {
+  return (
+    <div>
+      <div className="header">
+        <h2>RentACar</h2>
+      </div>
+      <ListOfCars />
+    </div>
+  );
+};
 
 export default App;
