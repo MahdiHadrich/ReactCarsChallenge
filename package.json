@@ -9,6 +9,7 @@
     "start": "node server/index.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.6.0",
     "@types/jest": "^24.0.22",
     "@types/node": "^12.12.7",
     "@types/react": "^16.9.11",
