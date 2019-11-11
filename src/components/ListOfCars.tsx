@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import Input from "@material-ui/core/Input";
+import getRentPrice from "./getRentPrice";
 
 const ListOfCars = () => {
   const [cars, setCars] = useState([]);
@@ -69,6 +70,11 @@ const ListOfCars = () => {
       setDuration(30);
     }
   };
+
+  const rentPrice = cars.map(car => ({
+    ...car,
+    price: getRentPrice(distance, duration, car)
+  }));
 
   return (
     <div>
@@ -141,7 +147,7 @@ const ListOfCars = () => {
       </div>
 
       <div className="wrapper">
-        {cars && cars.map(car => <Car key={car.id} {...car} />)}
+        {rentPrice && rentPrice.map(car => <Car key={car.id} {...car} />)}
       </div>
     </div>
   );
